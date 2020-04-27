@@ -5,3 +5,6 @@ script:
 - ./Sources/gdal/prepare_gdal.sh
 - cd Tests
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -scheme Tests CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=13.3' | xcpretty
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t 3b84be44-d611-48a9-91be-19788766882a
