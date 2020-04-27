@@ -6,8 +6,13 @@ This is GDAL static library builded for ios platform, with swift binding
 ### Installation
 For installation GDAL you can use cocoapods
 
-```
+```ruby
 pod 'gdal-swift-static'
+```
+
+For using pods you need to add custom source
+```ruby
+source 'https://github.com/cropio/cocoapods-specs.git'
 ```
 
 ### TileProvider
