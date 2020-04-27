@@ -1,5 +1,5 @@
 # gdal-static-swift
-[![Build Status](https://travis-ci.com/cropio/gdal-static-swift.svg?token=2x1gjKbRpPVj3abdDxFe&branch=master)](https://travis-ci.com/cropio/gdal-static-swift)[![codecov](https://codecov.io/gh/cropio/gdal-static-swift/branch/master/graph/badge.svg?token=79emLU9lm3)](https://codecov.io/gh/cropio/gdal-static-swift)[![Maintainability](https://api.codeclimate.com/v1/badges/14c3a11bb64cf09f9317/maintainability)](https://codeclimate.com/repos/5ea6c2f7644a6501a300d6bc/maintainability)
+[![Build Status](https://travis-ci.com/cropio/gdal-static-swift.svg?token=2x1gjKbRpPVj3abdDxFe&branch=master)](https://travis-ci.com/cropio/gdal-static-swift) [![codecov](https://codecov.io/gh/cropio/gdal-static-swift/branch/master/graph/badge.svg?token=79emLU9lm3)](https://codecov.io/gh/cropio/gdal-static-swift) [![Maintainability](https://api.codeclimate.com/v1/badges/14c3a11bb64cf09f9317/maintainability)](https://codeclimate.com/repos/5ea6c2f7644a6501a300d6bc/maintainability)
 
 This is GDAL static library builded for ios platform, with swift binding
 
