@@ -1,0 +1,625 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		158347A92456E2730090090A /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158347A82456E2730090090A /* Tests.swift */; };
+		1583480A2456E2F20090090A /* Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158347B02456E2F20090090A /* Bounds.swift */; };
+		1583480B2456E2F20090090A /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158347B12456E2F20090090A /* Color.swift */; };
+		1583480C2456E2F20090090A /* TileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158347B22456E2F20090090A /* TileProvider.swift */; };
+		1583480D2456E2F20090090A /* libgdal.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 158347B42456E2F20090090A /* libgdal.a */; };
+		1583480E2456E2F20090090A /* libproj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 158347B52456E2F20090090A /* libproj.a */; };
+		1583480F2456E2F20090090A /* libgdal.part.1 in Resources */ = {isa = PBXBuildFile; fileRef = 158347FC2456E2F20090090A /* libgdal.part.1 */; };
+		158348102456E2F20090090A /* libgdal.a.zip in Resources */ = {isa = PBXBuildFile; fileRef = 158347FD2456E2F20090090A /* libgdal.a.zip */; };
+		158348112456E2F20090090A /* libgdal.part.2 in Resources */ = {isa = PBXBuildFile; fileRef = 158347FE2456E2F20090090A /* libgdal.part.2 */; };
+		158348122456E2F20090090A /* libgdal.part.5 in Resources */ = {isa = PBXBuildFile; fileRef = 158347FF2456E2F20090090A /* libgdal.part.5 */; };
+		158348132456E2F20090090A /* libgdal.part.4 in Resources */ = {isa = PBXBuildFile; fileRef = 158348002456E2F20090090A /* libgdal.part.4 */; };
+		158348142456E2F20090090A /* libgdal.part.3 in Resources */ = {isa = PBXBuildFile; fileRef = 158348012456E2F20090090A /* libgdal.part.3 */; };
+		158348152456E2F20090090A /* prepare_gdal.sh in Resources */ = {isa = PBXBuildFile; fileRef = 158348032456E2F20090090A /* prepare_gdal.sh */; };
+		158348162456E2F20090090A /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158348042456E2F20090090A /* DataType.swift */; };
+		158348172456E2F20090090A /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158348052456E2F20090090A /* Helpers.swift */; };
+		158348182456E2F20090090A /* RasterBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158348062456E2F20090090A /* RasterBand.swift */; };
+		158348192456E2F20090090A /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158348072456E2F20090090A /* Dataset.swift */; };
+		1583481A2456E2F20090090A /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158348082456E2F20090090A /* Driver.swift */; };
+		1583481B2456E2F20090090A /* Warp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158348092456E2F20090090A /* Warp.swift */; };
+		1583481E2456E70A0090090A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1583481D2456E70A0090090A /* libz.tbd */; };
+		158348202456E7150090090A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1583481F2456E7150090090A /* libsqlite3.tbd */; };
+		158348222456E7210090090A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 158348212456E7210090090A /* libc++.tbd */; };
+		158348352456E7A10090090A /* ndvi_float.tif in Resources */ = {isa = PBXBuildFile; fileRef = 158348322456E7A10090090A /* ndvi_float.tif */; };
+		158348362456E7A10090090A /* ndvi_int.tif in Resources */ = {isa = PBXBuildFile; fileRef = 158348332456E7A10090090A /* ndvi_int.tif */; };
+		158348372456E7A10090090A /* visual.tif in Resources */ = {isa = PBXBuildFile; fileRef = 158348342456E7A10090090A /* visual.tif */; };
+		1583483E2456E8320090090A /* ndvi_int_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 158348392456E8320090090A /* ndvi_int_tile.base64 */; };
+		1583483F2456E8320090090A /* visual_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483A2456E8320090090A /* visual_tile.base64 */; };
+		158348402456E8320090090A /* contrast_float_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483B2456E8320090090A /* contrast_float_tile.base64 */; };
+		158348412456E8320090090A /* ndvi_float_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483C2456E8320090090A /* ndvi_float_tile.base64 */; };
+		158348422456E8320090090A /* contrast_int_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483D2456E8320090090A /* contrast_int_tile.base64 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		158347A52456E2730090090A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		158347A82456E2730090090A /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		158347AA2456E2730090090A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		158347B02456E2F20090090A /* Bounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bounds.swift; sourceTree = "<group>"; };
+		158347B12456E2F20090090A /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		158347B22456E2F20090090A /* TileProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileProvider.swift; sourceTree = "<group>"; };
+		158347B42456E2F20090090A /* libgdal.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgdal.a; sourceTree = "<group>"; };
+		158347B52456E2F20090090A /* libproj.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libproj.a; sourceTree = "<group>"; };
+		158347B72456E2F20090090A /* cpl_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_list.h; sourceTree = "<group>"; };
+		158347B82456E2F20090090A /* cpl_virtualmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_virtualmem.h; sourceTree = "<group>"; };
+		158347B92456E2F20090090A /* org_proj4_PJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_proj4_PJ.h; sourceTree = "<group>"; };
+		158347BA2456E2F20090090A /* geodesic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geodesic.h; sourceTree = "<group>"; };
+		158347BB2456E2F20090090A /* gdaljp2metadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdaljp2metadata.h; sourceTree = "<group>"; };
+		158347BC2456E2F20090090A /* ogr_geocoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_geocoding.h; sourceTree = "<group>"; };
+		158347BD2456E2F20090090A /* vrtdataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vrtdataset.h; sourceTree = "<group>"; };
+		158347BE2456E2F20090090A /* rawdataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rawdataset.h; sourceTree = "<group>"; };
+		158347BF2456E2F20090090A /* proj_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = proj_api.h; sourceTree = "<group>"; };
+		158347C02456E2F20090090A /* cpl_string.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_string.h; sourceTree = "<group>"; };
+		158347C12456E2F20090090A /* gdalgeorefpamdataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdalgeorefpamdataset.h; sourceTree = "<group>"; };
+		158347C22456E2F20090090A /* gdalgrid_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdalgrid_priv.h; sourceTree = "<group>"; };
+		158347C32456E2F20090090A /* org_proj4_Projections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = org_proj4_Projections.h; sourceTree = "<group>"; };
+		158347C42456E2F20090090A /* cpl_config_extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_config_extras.h; sourceTree = "<group>"; };
+		158347C52456E2F20090090A /* gdaljp2abstractdataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdaljp2abstractdataset.h; sourceTree = "<group>"; };
+		158347C62456E2F20090090A /* gdal_simplesurf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_simplesurf.h; sourceTree = "<group>"; };
+		158347C72456E2F20090090A /* cpl_wince.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_wince.h; sourceTree = "<group>"; };
+		158347C82456E2F20090090A /* ogrsf_frmts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogrsf_frmts.h; sourceTree = "<group>"; };
+		158347C92456E2F20090090A /* cpl_multiproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_multiproc.h; sourceTree = "<group>"; };
+		158347CA2456E2F20090090A /* cpl_hash_set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_hash_set.h; sourceTree = "<group>"; };
+		158347CB2456E2F20090090A /* gdal_csv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_csv.h; sourceTree = "<group>"; };
+		158347CC2456E2F20090090A /* cpl_odbc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_odbc.h; sourceTree = "<group>"; };
+		158347CD2456E2F20090090A /* gdal_frmts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_frmts.h; sourceTree = "<group>"; };
+		158347CE2456E2F20090090A /* gdalgrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdalgrid.h; sourceTree = "<group>"; };
+		158347CF2456E2F20090090A /* gvgcpfit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gvgcpfit.h; sourceTree = "<group>"; };
+		158347D02456E2F20090090A /* gdal_pam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_pam.h; sourceTree = "<group>"; };
+		158347D12456E2F20090090A /* gdal_proxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_proxy.h; sourceTree = "<group>"; };
+		158347D22456E2F20090090A /* cpl_conv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_conv.h; sourceTree = "<group>"; };
+		158347D32456E2F20090090A /* thinplatespline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thinplatespline.h; sourceTree = "<group>"; };
+		158347D42456E2F20090090A /* gdal_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_priv.h; sourceTree = "<group>"; };
+		158347D52456E2F20090090A /* ogr_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_api.h; sourceTree = "<group>"; };
+		158347D62456E2F20090090A /* gdal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal.h; sourceTree = "<group>"; };
+		158347D72456E2F20090090A /* ogr_feature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_feature.h; sourceTree = "<group>"; };
+		158347D82456E2F20090090A /* cpl_minizip_zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_minizip_zip.h; sourceTree = "<group>"; };
+		158347D92456E2F20090090A /* ogr_srs_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_srs_api.h; sourceTree = "<group>"; };
+		158347DA2456E2F20090090A /* cpl_vsil_curl_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_vsil_curl_priv.h; sourceTree = "<group>"; };
+		158347DB2456E2F20090090A /* gdalwarper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdalwarper.h; sourceTree = "<group>"; };
+		158347DC2456E2F20090090A /* cpl_time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_time.h; sourceTree = "<group>"; };
+		158347DD2456E2F20090090A /* cpl_minizip_unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_minizip_unzip.h; sourceTree = "<group>"; };
+		158347DE2456E2F20090090A /* gdalwarpkernel_opencl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdalwarpkernel_opencl.h; sourceTree = "<group>"; };
+		158347DF2456E2F20090090A /* cpl_http.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_http.h; sourceTree = "<group>"; };
+		158347E02456E2F20090090A /* cpl_vsi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_vsi.h; sourceTree = "<group>"; };
+		158347E12456E2F20090090A /* cpl_port.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_port.h; sourceTree = "<group>"; };
+		158347E22456E2F20090090A /* gdal_rat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_rat.h; sourceTree = "<group>"; };
+		158347E32456E2F20090090A /* cpl_spawn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_spawn.h; sourceTree = "<group>"; };
+		158347E42456E2F20090090A /* projects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = projects.h; sourceTree = "<group>"; };
+		158347E52456E2F20090090A /* cpl_quad_tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_quad_tree.h; sourceTree = "<group>"; };
+		158347E62456E2F20090090A /* cpl_csv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_csv.h; sourceTree = "<group>"; };
+		158347E72456E2F20090090A /* cplkeywordparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cplkeywordparser.h; sourceTree = "<group>"; };
+		158347E82456E2F20090090A /* cpl_atomic_ops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_atomic_ops.h; sourceTree = "<group>"; };
+		158347E92456E2F20090090A /* gdalexif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdalexif.h; sourceTree = "<group>"; };
+		158347EA2456E2F20090090A /* gdal_alg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_alg.h; sourceTree = "<group>"; };
+		158347EB2456E2F20090090A /* cpl_win32ce_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_win32ce_api.h; sourceTree = "<group>"; };
+		158347EC2456E2F20090090A /* ogr_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_core.h; sourceTree = "<group>"; };
+		158347ED2456E2F20090090A /* ogr_geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_geometry.h; sourceTree = "<group>"; };
+		158347EE2456E2F20090090A /* cpl_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_config.h; sourceTree = "<group>"; };
+		158347EF2456E2F20090090A /* ogr_featurestyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_featurestyle.h; sourceTree = "<group>"; };
+		158347F02456E2F20090090A /* cpl_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_error.h; sourceTree = "<group>"; };
+		158347F12456E2F20090090A /* cpl_progress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_progress.h; sourceTree = "<group>"; };
+		158347F22456E2F20090090A /* cpl_minixml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_minixml.h; sourceTree = "<group>"; };
+		158347F32456E2F20090090A /* ogr_spatialref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_spatialref.h; sourceTree = "<group>"; };
+		158347F42456E2F20090090A /* gdal_vrt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_vrt.h; sourceTree = "<group>"; };
+		158347F52456E2F20090090A /* memdataset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = memdataset.h; sourceTree = "<group>"; };
+		158347F62456E2F20090090A /* cpl_vsi_virtual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_vsi_virtual.h; sourceTree = "<group>"; };
+		158347F72456E2F20090090A /* ogr_p.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ogr_p.h; sourceTree = "<group>"; };
+		158347F82456E2F20090090A /* cpl_minizip_ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpl_minizip_ioapi.h; sourceTree = "<group>"; };
+		158347F92456E2F20090090A /* gdal_alg_priv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_alg_priv.h; sourceTree = "<group>"; };
+		158347FA2456E2F20090090A /* gdal_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gdal_version.h; sourceTree = "<group>"; };
+		158347FC2456E2F20090090A /* libgdal.part.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = libgdal.part.1; sourceTree = "<group>"; };
+		158347FD2456E2F20090090A /* libgdal.a.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = libgdal.a.zip; sourceTree = "<group>"; };
+		158347FE2456E2F20090090A /* libgdal.part.2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = libgdal.part.2; sourceTree = "<group>"; };
+		158347FF2456E2F20090090A /* libgdal.part.5 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = libgdal.part.5; sourceTree = "<group>"; };
+		158348002456E2F20090090A /* libgdal.part.4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = libgdal.part.4; sourceTree = "<group>"; };
+		158348012456E2F20090090A /* libgdal.part.3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = libgdal.part.3; sourceTree = "<group>"; };
+		158348022456E2F20090090A /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		158348032456E2F20090090A /* prepare_gdal.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = prepare_gdal.sh; sourceTree = "<group>"; };
+		158348042456E2F20090090A /* DataType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		158348052456E2F20090090A /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		158348062456E2F20090090A /* RasterBand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RasterBand.swift; sourceTree = "<group>"; };
+		158348072456E2F20090090A /* Dataset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		158348082456E2F20090090A /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		158348092456E2F20090090A /* Warp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warp.swift; sourceTree = "<group>"; };
+		1583481D2456E70A0090090A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1583481F2456E7150090090A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		158348212456E7210090090A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		158348322456E7A10090090A /* ndvi_float.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ndvi_float.tif; sourceTree = "<group>"; };
+		158348332456E7A10090090A /* ndvi_int.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ndvi_int.tif; sourceTree = "<group>"; };
+		158348342456E7A10090090A /* visual.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = visual.tif; sourceTree = "<group>"; };
+		158348392456E8320090090A /* ndvi_int_tile.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ndvi_int_tile.base64; sourceTree = "<group>"; };
+		1583483A2456E8320090090A /* visual_tile.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = visual_tile.base64; sourceTree = "<group>"; };
+		1583483B2456E8320090090A /* contrast_float_tile.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contrast_float_tile.base64; sourceTree = "<group>"; };
+		1583483C2456E8320090090A /* ndvi_float_tile.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ndvi_float_tile.base64; sourceTree = "<group>"; };
+		1583483D2456E8320090090A /* contrast_int_tile.base64 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = contrast_int_tile.base64; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		158347A22456E2730090090A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158348222456E7210090090A /* libc++.tbd in Frameworks */,
+				158348202456E7150090090A /* libsqlite3.tbd in Frameworks */,
+				1583481E2456E70A0090090A /* libz.tbd in Frameworks */,
+				1583480E2456E2F20090090A /* libproj.a in Frameworks */,
+				1583480D2456E2F20090090A /* libgdal.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1583479A2456E21C0090090A = {
+			isa = PBXGroup;
+			children = (
+				158347A72456E2730090090A /* Tests */,
+				158347A62456E2730090090A /* Products */,
+				1583481C2456E70A0090090A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		158347A62456E2730090090A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				158347A52456E2730090090A /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		158347A72456E2730090090A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				158347AE2456E2F20090090A /* Sources */,
+				158348312456E7A10090090A /* Resources */,
+				158348382456E8320090090A /* Files */,
+				158347A82456E2730090090A /* Tests.swift */,
+				158347AA2456E2730090090A /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		158347AE2456E2F20090090A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				158347AF2456E2F20090090A /* TileProvider */,
+				158347B32456E2F20090090A /* gdal */,
+				158348042456E2F20090090A /* DataType.swift */,
+				158348052456E2F20090090A /* Helpers.swift */,
+				158348062456E2F20090090A /* RasterBand.swift */,
+				158348072456E2F20090090A /* Dataset.swift */,
+				158348082456E2F20090090A /* Driver.swift */,
+				158348092456E2F20090090A /* Warp.swift */,
+			);
+			name = Sources;
+			path = ../../Sources;
+			sourceTree = "<group>";
+		};
+		158347AF2456E2F20090090A /* TileProvider */ = {
+			isa = PBXGroup;
+			children = (
+				158347B02456E2F20090090A /* Bounds.swift */,
+				158347B12456E2F20090090A /* Color.swift */,
+				158347B22456E2F20090090A /* TileProvider.swift */,
+			);
+			path = TileProvider;
+			sourceTree = "<group>";
+		};
+		158347B32456E2F20090090A /* gdal */ = {
+			isa = PBXGroup;
+			children = (
+				158347B42456E2F20090090A /* libgdal.a */,
+				158347B52456E2F20090090A /* libproj.a */,
+				158347B62456E2F20090090A /* include */,
+				158347FB2456E2F20090090A /* lib */,
+				158348022456E2F20090090A /* module.modulemap */,
+				158348032456E2F20090090A /* prepare_gdal.sh */,
+			);
+			path = gdal;
+			sourceTree = "<group>";
+		};
+		158347B62456E2F20090090A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				158347B72456E2F20090090A /* cpl_list.h */,
+				158347B82456E2F20090090A /* cpl_virtualmem.h */,
+				158347B92456E2F20090090A /* org_proj4_PJ.h */,
+				158347BA2456E2F20090090A /* geodesic.h */,
+				158347BB2456E2F20090090A /* gdaljp2metadata.h */,
+				158347BC2456E2F20090090A /* ogr_geocoding.h */,
+				158347BD2456E2F20090090A /* vrtdataset.h */,
+				158347BE2456E2F20090090A /* rawdataset.h */,
+				158347BF2456E2F20090090A /* proj_api.h */,
+				158347C02456E2F20090090A /* cpl_string.h */,
+				158347C12456E2F20090090A /* gdalgeorefpamdataset.h */,
+				158347C22456E2F20090090A /* gdalgrid_priv.h */,
+				158347C32456E2F20090090A /* org_proj4_Projections.h */,
+				158347C42456E2F20090090A /* cpl_config_extras.h */,
+				158347C52456E2F20090090A /* gdaljp2abstractdataset.h */,
+				158347C62456E2F20090090A /* gdal_simplesurf.h */,
+				158347C72456E2F20090090A /* cpl_wince.h */,
+				158347C82456E2F20090090A /* ogrsf_frmts.h */,
+				158347C92456E2F20090090A /* cpl_multiproc.h */,
+				158347CA2456E2F20090090A /* cpl_hash_set.h */,
+				158347CB2456E2F20090090A /* gdal_csv.h */,
+				158347CC2456E2F20090090A /* cpl_odbc.h */,
+				158347CD2456E2F20090090A /* gdal_frmts.h */,
+				158347CE2456E2F20090090A /* gdalgrid.h */,
+				158347CF2456E2F20090090A /* gvgcpfit.h */,
+				158347D02456E2F20090090A /* gdal_pam.h */,
+				158347D12456E2F20090090A /* gdal_proxy.h */,
+				158347D22456E2F20090090A /* cpl_conv.h */,
+				158347D32456E2F20090090A /* thinplatespline.h */,
+				158347D42456E2F20090090A /* gdal_priv.h */,
+				158347D52456E2F20090090A /* ogr_api.h */,
+				158347D62456E2F20090090A /* gdal.h */,
+				158347D72456E2F20090090A /* ogr_feature.h */,
+				158347D82456E2F20090090A /* cpl_minizip_zip.h */,
+				158347D92456E2F20090090A /* ogr_srs_api.h */,
+				158347DA2456E2F20090090A /* cpl_vsil_curl_priv.h */,
+				158347DB2456E2F20090090A /* gdalwarper.h */,
+				158347DC2456E2F20090090A /* cpl_time.h */,
+				158347DD2456E2F20090090A /* cpl_minizip_unzip.h */,
+				158347DE2456E2F20090090A /* gdalwarpkernel_opencl.h */,
+				158347DF2456E2F20090090A /* cpl_http.h */,
+				158347E02456E2F20090090A /* cpl_vsi.h */,
+				158347E12456E2F20090090A /* cpl_port.h */,
+				158347E22456E2F20090090A /* gdal_rat.h */,
+				158347E32456E2F20090090A /* cpl_spawn.h */,
+				158347E42456E2F20090090A /* projects.h */,
+				158347E52456E2F20090090A /* cpl_quad_tree.h */,
+				158347E62456E2F20090090A /* cpl_csv.h */,
+				158347E72456E2F20090090A /* cplkeywordparser.h */,
+				158347E82456E2F20090090A /* cpl_atomic_ops.h */,
+				158347E92456E2F20090090A /* gdalexif.h */,
+				158347EA2456E2F20090090A /* gdal_alg.h */,
+				158347EB2456E2F20090090A /* cpl_win32ce_api.h */,
+				158347EC2456E2F20090090A /* ogr_core.h */,
+				158347ED2456E2F20090090A /* ogr_geometry.h */,
+				158347EE2456E2F20090090A /* cpl_config.h */,
+				158347EF2456E2F20090090A /* ogr_featurestyle.h */,
+				158347F02456E2F20090090A /* cpl_error.h */,
+				158347F12456E2F20090090A /* cpl_progress.h */,
+				158347F22456E2F20090090A /* cpl_minixml.h */,
+				158347F32456E2F20090090A /* ogr_spatialref.h */,
+				158347F42456E2F20090090A /* gdal_vrt.h */,
+				158347F52456E2F20090090A /* memdataset.h */,
+				158347F62456E2F20090090A /* cpl_vsi_virtual.h */,
+				158347F72456E2F20090090A /* ogr_p.h */,
+				158347F82456E2F20090090A /* cpl_minizip_ioapi.h */,
+				158347F92456E2F20090090A /* gdal_alg_priv.h */,
+				158347FA2456E2F20090090A /* gdal_version.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		158347FB2456E2F20090090A /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				158347FC2456E2F20090090A /* libgdal.part.1 */,
+				158347FD2456E2F20090090A /* libgdal.a.zip */,
+				158347FE2456E2F20090090A /* libgdal.part.2 */,
+				158347FF2456E2F20090090A /* libgdal.part.5 */,
+				158348002456E2F20090090A /* libgdal.part.4 */,
+				158348012456E2F20090090A /* libgdal.part.3 */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		1583481C2456E70A0090090A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				158348212456E7210090090A /* libc++.tbd */,
+				1583481F2456E7150090090A /* libsqlite3.tbd */,
+				1583481D2456E70A0090090A /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		158348312456E7A10090090A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				158348322456E7A10090090A /* ndvi_float.tif */,
+				158348332456E7A10090090A /* ndvi_int.tif */,
+				158348342456E7A10090090A /* visual.tif */,
+			);
+			name = Resources;
+			path = ../../Resources;
+			sourceTree = "<group>";
+		};
+		158348382456E8320090090A /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				158348392456E8320090090A /* ndvi_int_tile.base64 */,
+				1583483A2456E8320090090A /* visual_tile.base64 */,
+				1583483B2456E8320090090A /* contrast_float_tile.base64 */,
+				1583483C2456E8320090090A /* ndvi_float_tile.base64 */,
+				1583483D2456E8320090090A /* contrast_int_tile.base64 */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		158347A42456E2730090090A /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 158347AB2456E2730090090A /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				158347A12456E2730090090A /* Sources */,
+				158347A22456E2730090090A /* Frameworks */,
+				158347A32456E2730090090A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = UnitTests;
+			productReference = 158347A52456E2730090090A /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1583479B2456E21C0090090A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				TargetAttributes = {
+					158347A42456E2730090090A = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 1583479E2456E21C0090090A /* Build configuration list for PBXProject "Tests" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1583479A2456E21C0090090A;
+			productRefGroup = 158347A62456E2730090090A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				158347A42456E2730090090A /* Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		158347A32456E2730090090A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				158348152456E2F20090090A /* prepare_gdal.sh in Resources */,
+				158348102456E2F20090090A /* libgdal.a.zip in Resources */,
+				158348422456E8320090090A /* contrast_int_tile.base64 in Resources */,
+				1583483F2456E8320090090A /* visual_tile.base64 in Resources */,
+				158348122456E2F20090090A /* libgdal.part.5 in Resources */,
+				158348362456E7A10090090A /* ndvi_int.tif in Resources */,
+				158348132456E2F20090090A /* libgdal.part.4 in Resources */,
+				158348402456E8320090090A /* contrast_float_tile.base64 in Resources */,
+				158348142456E2F20090090A /* libgdal.part.3 in Resources */,
+				158348352456E7A10090090A /* ndvi_float.tif in Resources */,
+				158348372456E7A10090090A /* visual.tif in Resources */,
+				158348412456E8320090090A /* ndvi_float_tile.base64 in Resources */,
+				1583483E2456E8320090090A /* ndvi_int_tile.base64 in Resources */,
+				158348112456E2F20090090A /* libgdal.part.2 in Resources */,
+				1583480F2456E2F20090090A /* libgdal.part.1 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		158347A12456E2730090090A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1583480A2456E2F20090090A /* Bounds.swift in Sources */,
+				1583481B2456E2F20090090A /* Warp.swift in Sources */,
+				158348172456E2F20090090A /* Helpers.swift in Sources */,
+				158348182456E2F20090090A /* RasterBand.swift in Sources */,
+				158348162456E2F20090090A /* DataType.swift in Sources */,
+				158347A92456E2730090090A /* Tests.swift in Sources */,
+				1583480C2456E2F20090090A /* TileProvider.swift in Sources */,
+				1583481A2456E2F20090090A /* Driver.swift in Sources */,
+				158348192456E2F20090090A /* Dataset.swift in Sources */,
+				1583480B2456E2F20090090A /* Color.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1583479F2456E21C0090090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../Sources/gdal/";
+			};
+			name = Debug;
+		};
+		158347A02456E21C0090090A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../Sources/gdal/";
+			};
+			name = Release;
+		};
+		158347AC2456E2730090090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cropio.gdal.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/../Sources/gdal";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		158347AD2456E2730090090A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cropio.gdal.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/../Sources/gdal";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1583479E2456E21C0090090A /* Build configuration list for PBXProject "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1583479F2456E21C0090090A /* Debug */,
+				158347A02456E21C0090090A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		158347AB2456E2730090090A /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				158347AC2456E2730090090A /* Debug */,
+				158347AD2456E2730090090A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1583479B2456E21C0090090A /* Project object */;
+}

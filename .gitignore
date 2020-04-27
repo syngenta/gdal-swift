@@ -1,0 +1,15 @@
+.DS_Store
+build_*/
+libgdal.a
+libgdal.a.zip
+gdal_swift.framework
+xcuserdata/
+build/
+Pods/
+Podfile.lock
+Demo.xcworkspace/
+
+!gdal-buld/
+gdal-buld/*
+!gdal-buld/build_gdal_ios.sh
+!gdal-buld/build-gdal-combined-lib.sh
