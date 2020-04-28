@@ -13,3 +13,4 @@ Demo.xcworkspace/
 gdal-buld/*
 !gdal-buld/build_gdal_ios.sh
 !gdal-buld/build-gdal-combined-lib.sh
+*.bak
