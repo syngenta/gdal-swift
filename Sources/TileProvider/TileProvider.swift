@@ -91,7 +91,7 @@ private extension TileProvider {
 
         let dataType = src.dataType(band: 1)
 
-        let bounds = Bounds(x: coordinates.x, y: coordinates.y, z: coordinates.z)
+        var bounds = Bounds(x: coordinates.x, y: coordinates.y, z: coordinates.z)
         let driver = Driver(identifier: .MEM)
 
         let dst = try Dataset(driver: driver,
@@ -99,7 +99,7 @@ private extension TileProvider {
                               bandCount: bandCount,
                               dataType: dataType)
         dst.set(projection: src.projection)
-        dst.set(geoTransform: bounds.geoTransform)
+        dst.set(geoTransform: &bounds.transform)
 
         try Warp.reprojectImage(src: src, dst: dst, resampleAlgorithm: resampleAlgorithm)
 
@@ -164,13 +164,11 @@ private extension TileProvider {
     }
 
     func image(bitmap: [UInt8], type: CGImageAlphaInfo, size: CGSize) -> Data? {
-
-        let data = UnsafeMutableRawPointer(mutating: bitmap)
-
+        var bitmap = bitmap
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: type.rawValue)
 
-        let context = CGContext(data: data,
+        let context = CGContext(data: &bitmap,
                                 width: Int(size.width),
                                 height: Int(size.height),
                                 bitsPerComponent: 8,
