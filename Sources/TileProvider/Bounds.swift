@@ -33,11 +33,6 @@ struct Bounds {
             -((self.max.x - self.min.x) / self.tileSize) // высота пикселя
         ]
     }
-
-    var geoTransform: UnsafeMutablePointer<Double> {
-        var transform = self.transform
-        return UnsafeMutablePointer<Double>(&transform)
-    }
 }
 
 extension Bounds {
