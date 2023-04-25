@@ -5,7 +5,7 @@ GDAL_LIB=Sources/gdal/lib
 
 echo "Clean"
 rm -f $GDAL_LIB/gdal.xcframework.zip
-rm -f $GDAL/gdal.xcframework
+rm -rf $GDAL/gdal.xcframework
 
 echo "Gdal union"
 cat $GDAL_LIB/gdal.part.* > $GDAL_LIB/gdal.xcframework.zip

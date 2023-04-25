@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Sources/*.swift', 'Sources/TileProvider/*.swift'
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64' }
   s.xcconfig = { 'OTHER_LDFLAGS' => '-liconv' }
-  s.libraries = 'c++', 'sqlite3', 'z'
+  s.libraries = 'c++', 'sqlite3', 'z', 'xml2'
   s.vendored_frameworks = 'Sources/gdal/gdal.xcframework'
 
 end
