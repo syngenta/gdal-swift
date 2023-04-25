@@ -28,6 +28,8 @@ done
 SDK_VERSION=10.0
 
 # Making xcframework for gdal
+rm -f gdal.xcframework.zip
+rm -rf gdal.xcframework
 xcodebuild -create-xcframework \
     -library ${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/lib/libgdal_proj.a \
 		-headers ${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/include \
@@ -36,10 +38,11 @@ xcodebuild -create-xcframework \
     -output gdal.xcframework
 
 # Ziping GDAL for split
-zip gdal.xcframework.zip gdal.xcframework
+zip -r gdal.xcframework.zip gdal.xcframework
 
 # Spliting GDAL for github
+rm -rf parts
 mkdir parts
 split -b 50m "gdal.xcframework.zip" "parts/gdal.part."
 
-open .
+echo "Almost done! For copy xcframework parts to Sources folder just run './copy_parts.sh'"
