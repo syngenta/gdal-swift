@@ -51,32 +51,11 @@ cd gdal-buld
 ./build-gdal-combined-lib.sh
 ```
 
-After success compilation you will found **libgdal.a** and **libproj.a** in **install/GDAL** folder.
+After success compilation you will found **gdal.xcframework** in folder.
 
-For using gdal with **static framework** you need to copy gdal parts (gdal-buld/install/GDAL/parts) to **Sources/gdal/lib**
+For using gdal with **static framework** you need to copy gdal parts (gdal-buld/parts) to **Sources/gdal/lib**
 
-Removing old gdal parts
+Run this script for copy parts (Old parts will be removed)
 ```shell
-cd ..
-rm -rf Sources/gdal/lib/*
-```
-
-Copy parts
-```shell
-cp gdal-buld/install/GDAL/parts/* Sources/gdal/lib
-```
-
-Removing headers
-```shell
-rm -rf Sources/gdal/include
-```
-
-Copy headers
-```shell
-cp -R gdal-buld/install/GDAL/include Sources/gdal/include
-```
-
-Copy proj
-```shell
-cp gdal-buld/install/GDAL/libproj.a Sources/gdal/libproj.a
+./copy_parts.sh
 ```

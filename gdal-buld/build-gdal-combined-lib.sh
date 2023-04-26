@@ -14,48 +14,35 @@ fi
 
 mkdir ${PREFIX}
 
-for f in "armv7" "armv7s" "arm64"; do
+for f in "arm64"; do
 echo Building $f
 ./build_gdal_ios.sh -p ${PREFIX} -a $f device 2>&1 | tee "${LOG}/${f}.txt"
 done
 
 echo Building simulator
-for f in "x86_64"; do
+for f in "arm64"; do
 echo Building $f
 ./build_gdal_ios.sh -p ${PREFIX} -a $f simulator 2>&1 | tee "${LOG}/simulator.txt"
 done
 
+SDK_VERSION=13.0
 
-SDK_VERSION=10.0
-
-lipo \
-${PREFIX}/x86_64/iphonesimulator${SDK_VERSION}.sdk/lib/libgdal.a \
-${PREFIX}/armv7/iphoneos${SDK_VERSION}.sdk/lib/libgdal.a \
-${PREFIX}/armv7s/iphoneos${SDK_VERSION}.sdk/lib/libgdal.a \
-${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/lib/libgdal.a \
--output ${PREFIX}/libgdal.a \
--create
-
-lipo \
-${PREFIX}/x86_64/iphonesimulator${SDK_VERSION}.sdk/lib/libproj.a \
-${PREFIX}/armv7/iphoneos${SDK_VERSION}.sdk/lib/libproj.a \
-${PREFIX}/armv7s/iphoneos${SDK_VERSION}.sdk/lib/libproj.a \
-${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/lib/libproj.a \
--output ${PREFIX}/libproj.a \
--create
-
-# Copy files to GDAL folder
-cd ${PREFIX}
-mkdir GDAL
-cp libgdal.a ${PREFIX}/libproj.a GDAL
-cp -R arm64/iphoneos10.0.sdk/include GDAL
+# Making xcframework for gdal
+rm -f gdal.xcframework.zip
+rm -rf gdal.xcframework
+xcodebuild -create-xcframework \
+    -library ${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/lib/libgdal_proj.a \
+		-headers ${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/include \
+    -library ${PREFIX}/arm64/iphonesimulator${SDK_VERSION}.sdk/lib/libgdal_proj.a \
+		-headers ${PREFIX}/arm64/iphonesimulator${SDK_VERSION}.sdk/include \
+    -output gdal.xcframework
 
 # Ziping GDAL for split
-cd GDAL
-zip libgdal.a.zip libgdal.a
+zip -r gdal.xcframework.zip gdal.xcframework
 
 # Spliting GDAL for github
+rm -rf parts
 mkdir parts
-split -b 50m "libgdal.a.zip" "parts/libgdal.part."
+split -b 50m "gdal.xcframework.zip" "parts/gdal.part."
 
-open .
+echo "Almost done! For copy xcframework parts to Sources folder just run './copy_parts.sh'"

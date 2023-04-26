@@ -5,8 +5,8 @@
 //  Created by Evegeny Kalashnikov on 6/19/19.
 //
 
-import gdal
 import Foundation
+import gdal
 
 public class Driver {
 
@@ -17,6 +17,7 @@ public class Driver {
 
     public static func registerAll() {
         GDALAllRegister()
+        CPLSetConfigOption("GTIFF_SRS_SOURCE", "EPSG")
     }
 
     public static func deregisterAll() {
