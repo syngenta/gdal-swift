@@ -1,7 +1,7 @@
 #!/bin/bash
 set -u
 
-default_iphoneos_version=10.0
+default_iphoneos_version=13.0
 default_architecture=arm64
 
 export IPHONEOS_DEPLOYMENT_TARGET="${IPHONEOS_DEPLOYMENT_TARGET:-$default_iphoneos_version}"
@@ -91,7 +91,7 @@ echo library will be exported to $prefix
 #setup compiler flags
  # export CC=`xcrun -find -sdk iphoneos gcc`
 export CFLAGS="-I/opt/local/include -fembed-bitcode -Wno-error=implicit-function-declaration -arch ${arch} -pipe -Os -gdwarf-2 -isysroot ${platform_sdk_dir} ${extra_cflags}"
-export LDFLAGS="-arch ${arch} -isysroot ${platform_sdk_dir} -Wl,-dead_strip"
+export LDFLAGS="-arch ${arch} -isysroot ${platform_sdk_dir}"
  # export CXX=`xcrun -find -sdk iphoneos g++`
 export CXXFLAGS="${CFLAGS}"
  # export CPP=`xcrun -find -sdk iphoneos cpp`
@@ -139,7 +139,7 @@ echo "configure proj"
 
 echo
 echo "make install proj"
-time make -j8
+time make -j
 time make install || exit
 
 popd
@@ -266,7 +266,7 @@ echo "configure gdal"
 
 echo
 echo "building gdal"
-time make -j8
+time make -j
 
 echo
 echo "installing"

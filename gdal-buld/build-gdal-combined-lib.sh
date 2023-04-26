@@ -25,7 +25,7 @@ echo Building $f
 ./build_gdal_ios.sh -p ${PREFIX} -a $f simulator 2>&1 | tee "${LOG}/simulator.txt"
 done
 
-SDK_VERSION=10.0
+SDK_VERSION=13.0
 
 # Making xcframework for gdal
 rm -f gdal.xcframework.zip
