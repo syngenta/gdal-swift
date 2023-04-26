@@ -1,5 +1,0 @@
-module gdal {
-    header "include/gdal.h"
-    header "include/gdalwarper.h"
-    export *
-}

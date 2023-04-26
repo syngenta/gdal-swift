@@ -1,7 +1,7 @@
 .DS_Store
 build_*/
-libgdal.a
-libgdal.a.zip
+Sources/gdal/gdal.xcframework
+gdal.xcframework.zip
 gdal_swift.framework
 xcuserdata/
 build/
@@ -13,4 +13,5 @@ Demo.xcworkspace/
 gdal-buld/*
 !gdal-buld/build_gdal_ios.sh
 !gdal-buld/build-gdal-combined-lib.sh
+!gdal-buld/module.modulemap
 *.bak

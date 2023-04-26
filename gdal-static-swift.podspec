@@ -16,21 +16,13 @@ Pod::Spec.new do |s|
   s.author           = { 'Evgeny Kalashnikov' => 'lumyk@me.com' }
   s.source           = { :git => 'git@github.com:cropio/gdal-static-swift.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
 
   s.prepare_command = "sh Sources/gdal/prepare_gdal.sh"
-
-  s.source_files = 'Sources/*.swift', 'Sources/gdal/include/*.h', 'Sources/TileProvider/*.swift'
-  s.private_header_files = 'Sources/gdal/include/*.h'
-  s.pod_target_xcconfig = {
-    'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/Sources/gdal/**',
-    'LIBRARY_SEARCH_PATHS' => '$(PODS_TARGET_SRCROOT)/Sources/',
-    'VALID_ARCHS' => 'x86_64 armv7 arm64'
-  }
-
-  s.libraries = 'c++', 'sqlite3', 'z'
-
-  s.preserve_paths  = 'Sources/gdal/module.modulemap'
-  s.vendored_libraries = 'Sources/gdal/libproj.a','Sources/gdal/libgdal.a'
+  s.source_files = 'Sources/*.swift', 'Sources/TileProvider/*.swift'
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64' }
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-liconv' }
+  s.libraries = 'c++', 'sqlite3', 'z', 'xml2'
+  s.vendored_frameworks = 'Sources/gdal/gdal.xcframework'
 
 end
