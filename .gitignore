@@ -15,3 +15,4 @@ gdal-buld/*
 !gdal-buld/build-gdal-combined-lib.sh
 !gdal-buld/module.modulemap
 *.bak
+.swiftpm

@@ -20,7 +20,11 @@ Pod::Spec.new do |s|
 
   s.prepare_command = "sh Sources/gdal/prepare_gdal.sh"
   s.source_files = 'Sources/*.swift', 'Sources/TileProvider/*.swift'
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64' }
+  s.pod_target_xcconfig = {
+    'ARCHS[sdk=iphonesimulator*]' => 'arm64',
+    'ARCHS[sdk=iphoneos*]' => 'arm64',
+    'ARCHS' => 'arm64'
+  }
   s.xcconfig = { 'OTHER_LDFLAGS' => '-liconv' }
   s.libraries = 'c++', 'sqlite3', 'z', 'xml2'
   s.vendored_frameworks = 'Sources/gdal/gdal.xcframework'

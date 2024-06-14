@@ -11,7 +11,7 @@ if [ "$(pod repo list | grep -e "cropio-specs")" -ge 0 ]; then
 fi
 
 # Push library to repo
-pod repo push cropio-specs gdal-static-swift.podspec --allow-warnings
+pod repo push cropio-specs gdal-static-swift.podspec --allow-warnings --use-libraries --skip-import-validation --verbose
 
 # Back to primary
 git checkout gdal-static-swift.podspec

@@ -6,11 +6,12 @@
 //
 
 import XCTest
+@testable import gdal_static_swift
 
 class UnitTests: XCTestCase {
 
     let provider = TileProvider()
-    let bundle = Bundle(for: UnitTests.self)
+    let bundle = Bundle.module
     let coordinates = TileCoordinates(x: 19747, y: 11083, z: 15)
 
     func testBounds() {
@@ -209,4 +210,8 @@ class UnitTests: XCTestCase {
             XCTFail("error - \(error)")
         }
     }
+
+    static var allTests = [
+        ("testBounds", testBounds)
+    ]
 }
