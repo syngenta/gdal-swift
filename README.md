@@ -67,7 +67,7 @@ After uploading you need to change **url** in two files  **Package.swift** and *
 #### **Package.swift**
 File located in root folder. You need to change **url** and **checksum** in this file.
 
-For caclulation checksum you can use this command:
+For caclulation **checksum** you can use this command:
 ```shell
 swift package compute-checksum gdal.xcframework.zip
 ```
