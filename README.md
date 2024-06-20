@@ -56,8 +56,9 @@ cd gdal-buld
 After success compilation you will find **gdal.xcframework.zip** file in **gdal-buld** folder.
 
 Then you should upload this file to [**Releases**](https://github.com/cropio/gdal-static-swift/releases) section in this repository.
+
+**url** example:
 ```
-// **url** example
 https://github.com/cropio/gdal-static-swift/releases/download/1.0.0/gdal.xcframework.zip
 ```
 
