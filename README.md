@@ -53,11 +53,11 @@ cd gdal-buld
 ./build-gdal-combined-lib.sh
 ```
 
-- After success compilation you will find **gdal.xcframework.zip** file in **gdal-buld** folder.
+After success compilation you will find **gdal.xcframework.zip** file in **gdal-buld** folder.
 
-- Then you should upload this file to [**Releases**](https://github.com/cropio/gdal-static-swift/releases) section in this repository.
+Then you should upload this file to [**Releases**](https://github.com/cropio/gdal-static-swift/releases) section in this repository.
 
-- After uploading you need to change url in two files:
+After uploading you need to change url in two files:
 #### 1. **Package.swift**
 File located in root folder. You need to change **url** and **checksum** in this file.
 
