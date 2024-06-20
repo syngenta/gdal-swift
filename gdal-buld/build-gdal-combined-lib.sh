@@ -40,9 +40,4 @@ xcodebuild -create-xcframework \
 # Ziping GDAL for split
 zip -r gdal.xcframework.zip gdal.xcframework
 
-# Spliting GDAL for github
-rm -rf parts
-mkdir parts
-split -b 50m "gdal.xcframework.zip" "parts/gdal.part."
-
-echo "Almost done! For copy xcframework parts to Sources folder just run './copy_parts.sh'"
+echo "Almost done! On the next step You should upload gdal.xcframework.zip to Githab Releases https://github.com/cropio/gdal-static-swift/releases"
