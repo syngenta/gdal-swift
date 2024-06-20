@@ -26,7 +26,6 @@ let package = Package(
             cSettings: [.define("VALID_ARCHS", to: "arm64")],
             cxxSettings: [.define("VALID_ARCHS", to: "arm64")],
             linkerSettings: [
-                .linkedLibrary("c++"),
                 .linkedLibrary("sqlite3"),
                 .linkedLibrary("z"),
                 .linkedLibrary("xml2"),
@@ -41,5 +40,6 @@ let package = Package(
             cxxSettings: [.define("VALID_ARCHS", to: "arm64")]
         )
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageVersions: [.v5],
+    cxxLanguageStandard: .cxx14
 )
