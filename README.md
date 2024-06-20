@@ -62,7 +62,7 @@ Upload file **url** example:
 https://github.com/cropio/gdal-static-swift/releases/download/1.0.0/gdal.xcframework.zip
 ```
 
-After uploading you need to change **url** of this file in two files  **Package.swift** and **prepare_gdal.sh**
+After uploading you need to change **url** in two files  **Package.swift** and **prepare_gdal.sh**
   
 #### **Package.swift**
 File located in root folder. You need to change **url** and **checksum** in this file.
