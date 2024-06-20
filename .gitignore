@@ -16,3 +16,4 @@ gdal-buld/*
 !gdal-buld/module.modulemap
 *.bak
 .swiftpm
+.build
