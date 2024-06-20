@@ -12,6 +12,7 @@ Use Xcode menu **File -> Add Package Dependencies...** and add this repository u
 https://github.com/cropio/gdal-static-swift.git
 ```
 
+#### Cocoapods
 ```ruby
 pod 'gdal-swift-static', :git => 'https://github.com/cropio/gdal-static-swift.git'
 ```
@@ -41,7 +42,7 @@ do {
 For running **Demo** run commands:
 ```shell
 cd Demo
-pod install
+open Demo.xcodeproj
 ```
 
 ### GDAL static library compilation
@@ -54,4 +55,4 @@ cd gdal-buld
 
 After success compilation you will find **gdal.xcframework.zip** file in **gdal-buld** folder.
 Then you should upload this file to [**Releases**](https://github.com/cropio/gdal-static-swift/releases) section in this repository.
-After uploading you need to change url in **Package.swift** and **prepare_gdal.sh**(File located in *Sources/gdal/*) file to new **gdal.xcframework.zip** url.
+After uploading you need to change url in **Package.swift** and **prepare_gdal.sh**(File located in *Sources/gdal/*) to new **gdal.xcframework.zip** url.
