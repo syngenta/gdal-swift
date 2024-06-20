@@ -4,15 +4,16 @@
 This is GDAL static library builded for ios platform, with swift binding
 
 ### Installation
-For installation GDAL you can use cocoapods
+For installation GDAL you can use **Swift Package Manager** or **Cocoapods**
 
-```ruby
-pod 'gdal-swift-static'
+#### Swift Package Manager
+Use Xcode menu **File -> Add Package Dependencies...** and add this repository url in search field.
+```url
+https://github.com/cropio/gdal-static-swift.git
 ```
 
-For using pods you need to add custom source
 ```ruby
-source 'https://github.com/cropio/cocoapods-specs.git'
+pod 'gdal-swift-static', :git => 'https://github.com/cropio/gdal-static-swift.git'
 ```
 
 ### TileProvider
@@ -51,11 +52,6 @@ cd gdal-buld
 ./build-gdal-combined-lib.sh
 ```
 
-After success compilation you will found **gdal.xcframework** in folder.
-
-For using gdal with **static framework** you need to copy gdal parts (gdal-buld/parts) to **Sources/gdal/lib**
-
-Run this script for copy parts (Old parts will be removed)
-```shell
-./copy_parts.sh
-```
+After success compilation you will find **gdal.xcframework.zip** file in **gdal-buld** folder.
+Then you should upload this file to [**Releases**](https://github.com/cropio/gdal-static-swift/releases) section in this repository.
+After uploading you need to change url in **Package.swift** and **prepare_gdal.sh**(File located in *Sources/gdal/*) file to new **gdal.xcframework.zip** url.
