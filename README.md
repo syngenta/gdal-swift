@@ -13,7 +13,7 @@ https://github.com/syngenta/gdal-swift.git
 
 #### Cocoapods
 ```ruby
-pod 'gdal-static', :git => 'https://github.com/syngenta/gdal-swift.git'
+pod 'gdal-swift', :git => 'https://github.com/syngenta/gdal-swift.git'
 ```
 
 ### TileProvider
