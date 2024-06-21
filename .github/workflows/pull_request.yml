@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: swift package resolve
 
-      - name: Change directory to Tests
-        run: cd Tests
-
       - name: Run tests
         run: |
             cd Tests
