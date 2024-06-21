@@ -16,7 +16,8 @@
 		158348402456E8320090090A /* contrast_float_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483B2456E8320090090A /* contrast_float_tile.base64 */; };
 		158348412456E8320090090A /* ndvi_float_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483C2456E8320090090A /* ndvi_float_tile.base64 */; };
 		158348422456E8320090090A /* contrast_int_tile.base64 in Resources */ = {isa = PBXBuildFile; fileRef = 1583483D2456E8320090090A /* contrast_int_tile.base64 */; };
-		15A7E16B2C25A52200C3140D /* gdal-static-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A7E16A2C25A52200C3140D /* gdal-static-swift */; };
+		15A7E1712C25BDBE00C3140D /* gdal-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A7E1702C25BDBE00C3140D /* gdal-swift */; };
+		15A7E1742C25BE2600C3140D /* gdal-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A7E1732C25BE2600C3140D /* gdal-swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15A7E16B2C25A52200C3140D /* gdal-static-swift in Frameworks */,
+				15A7E1742C25BE2600C3140D /* gdal-swift in Frameworks */,
+				15A7E1712C25BDBE00C3140D /* gdal-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +122,8 @@
 			);
 			name = Tests;
 			packageProductDependencies = (
-				15A7E16A2C25A52200C3140D /* gdal-static-swift */,
+				15A7E1702C25BDBE00C3140D /* gdal-swift */,
+				15A7E1732C25BE2600C3140D /* gdal-swift */,
 			);
 			productName = UnitTests;
 			productReference = 158347A52456E2730090090A /* Tests.xctest */;
@@ -150,7 +153,7 @@
 			);
 			mainGroup = 1583479A2456E21C0090090A;
 			packageReferences = (
-				15A7E1692C25A52200C3140D /* XCLocalSwiftPackageReference ".." */,
+				15A7E1722C25BE2600C3140D /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 158347A62456E2730090090A /* Products */;
 			projectDirPath = "";
@@ -367,16 +370,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		15A7E1692C25A52200C3140D /* XCLocalSwiftPackageReference ".." */ = {
+		15A7E1722C25BE2600C3140D /* XCLocalSwiftPackageReference ".." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		15A7E16A2C25A52200C3140D /* gdal-static-swift */ = {
+		15A7E1702C25BDBE00C3140D /* gdal-swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = "gdal-static-swift";
+			productName = "gdal-swift";
+		};
+		15A7E1732C25BE2600C3140D /* gdal-swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = "gdal-swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
