@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15A7E1622C24D67200C3140D /* gdal-static-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A7E1612C24D67200C3140D /* gdal-static-swift */; };
+		15A7E1772C25BF2800C3140D /* gdal-swift in Frameworks */ = {isa = PBXBuildFile; productRef = 15A7E1762C25BF2800C3140D /* gdal-swift */; };
 		15FB05A222CB61D900C52AFC /* ndvi_float.tif in Resources */ = {isa = PBXBuildFile; fileRef = 15FB059F22CB61D900C52AFC /* ndvi_float.tif */; };
 		15FB05A422CB61D900C52AFC /* ndvi_int.tif in Resources */ = {isa = PBXBuildFile; fileRef = 15FB05A022CB61D900C52AFC /* ndvi_int.tif */; };
 		15FB05A622CB61D900C52AFC /* visual.tif in Resources */ = {isa = PBXBuildFile; fileRef = 15FB05A122CB61D900C52AFC /* visual.tif */; };
@@ -36,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15A7E1622C24D67200C3140D /* gdal-static-swift in Frameworks */,
+				15A7E1772C25BF2800C3140D /* gdal-swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +109,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				15A7E1612C24D67200C3140D /* gdal-static-swift */,
+				15A7E1762C25BF2800C3140D /* gdal-swift */,
 			);
 			productName = Demo;
 			productReference = 15FBD12C22BB945100C52AFC /* Demo.app */;
@@ -140,7 +140,7 @@
 			);
 			mainGroup = 15FBD12322BB945100C52AFC;
 			packageReferences = (
-				15A7E1602C24D67200C3140D /* XCLocalSwiftPackageReference ".." */,
+				15A7E1752C25BF2800C3140D /* XCLocalSwiftPackageReference ".." */,
 			);
 			productRefGroup = 15FBD12D22BB945100C52AFC /* Products */;
 			projectDirPath = "";
@@ -383,16 +383,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		15A7E1602C24D67200C3140D /* XCLocalSwiftPackageReference ".." */ = {
+		15A7E1752C25BF2800C3140D /* XCLocalSwiftPackageReference ".." */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ..;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		15A7E1612C24D67200C3140D /* gdal-static-swift */ = {
+		15A7E1762C25BF2800C3140D /* gdal-swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = "gdal-static-swift";
+			productName = "gdal-swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
