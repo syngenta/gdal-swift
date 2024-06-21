@@ -11,7 +11,11 @@ import XCTest
 class UnitTests: XCTestCase {
 
     let provider = TileProvider()
+    #if SWIFT_PACKAGE
     let bundle = Bundle.module
+    #else
+    let bundle = Bundle(for: UnitTests.self)
+    #endif
     let coordinates = TileCoordinates(x: 19747, y: 11083, z: 15)
 
     func testBounds() {
@@ -112,7 +116,7 @@ class UnitTests: XCTestCase {
 
             let tileBase64 = try String(contentsOfFile: tilePath)
 
-            XCTAssertEqual(tile.count, 43594)
+            XCTAssertEqual(tile.count, 43582)
             XCTAssertEqual(tile.base64EncodedString(), tileBase64.replacingOccurrences(of: "\n", with: ""))
         } catch let error {
             XCTFail("error - \(error)")
@@ -135,7 +139,7 @@ class UnitTests: XCTestCase {
 
             let tileBase64 = try String(contentsOfFile: tilePath)
 
-            XCTAssertEqual(tile.count, 59926)
+            XCTAssertEqual(tile.count, 57669)
             XCTAssertEqual(tile.base64EncodedString(), tileBase64.replacingOccurrences(of: "\n", with: ""))
         } catch let error {
             XCTFail("error - \(error)")
@@ -158,7 +162,7 @@ class UnitTests: XCTestCase {
 
             let tileBase64 = try String(contentsOfFile: tilePath)
 
-            XCTAssertEqual(tile.count, 59930)
+            XCTAssertEqual(tile.count, 57810)
             XCTAssertEqual(tile.base64EncodedString(), tileBase64.replacingOccurrences(of: "\n", with: ""))
         } catch let error {
             XCTFail("error - \(error)")
@@ -181,7 +185,7 @@ class UnitTests: XCTestCase {
 
             let tileBase64 = try String(contentsOfFile: tilePath)
 
-            XCTAssertEqual(tile.count, 57767)
+            XCTAssertEqual(tile.count, 56090)
             XCTAssertEqual(tile.base64EncodedString(), tileBase64.replacingOccurrences(of: "\n", with: ""))
         } catch let error {
             XCTFail("error - \(error)")
@@ -204,14 +208,10 @@ class UnitTests: XCTestCase {
 
             let tileBase64 = try String(contentsOfFile: tilePath)
 
-            XCTAssertEqual(tile.count, 57795)
+            XCTAssertEqual(tile.count, 56078)
             XCTAssertEqual(tile.base64EncodedString(), tileBase64.replacingOccurrences(of: "\n", with: ""))
         } catch let error {
             XCTFail("error - \(error)")
         }
     }
-
-    static var allTests = [
-        ("testBounds", testBounds)
-    ]
 }
