@@ -7,14 +7,14 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'gdal-static-swift'
+  s.name             = 'gdal-swift'
   s.version          = `git describe --abbrev=0 --tags`
-  s.summary          = 'GDAL static library'
+  s.summary          = 'GDAL library'
   s.description      = "This is GDAL static library builded for ios platform, with swift binding"
 
-  s.homepage         = 'https://github.com/cropio/gdal-static-swift'
-  s.author           = { 'Evgeny Kalashnikov' => 'lumyk@me.com' }
-  s.source           = { :git => 'git@github.com:cropio/gdal-static-swift.git', :tag => s.version.to_s }
+  s.homepage         = 'https://github.com/syngenta/gdal-swift'
+  s.author           = { 'Yevhenii Kalashnikov' => 'lumyk@me.com' }
+  s.source           = { :git => 'https://github.com/syngenta/gdal-swift.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '13.0'
 

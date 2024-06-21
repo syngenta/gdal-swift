@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import gdal_static_swift
+@testable import gdal_swift
 
 class UnitTests: XCTestCase {
 

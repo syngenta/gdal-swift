@@ -40,4 +40,4 @@ xcodebuild -create-xcframework \
 # Ziping GDAL for split
 zip -r gdal.xcframework.zip gdal.xcframework
 
-echo "Almost done! On the next step You should upload gdal.xcframework.zip to Githab Releases https://github.com/cropio/gdal-static-swift/releases"
+echo "Almost done! On the next step You should upload gdal.xcframework.zip to Githab Releases https://github.com/syngenta/gdal-swift/releases"

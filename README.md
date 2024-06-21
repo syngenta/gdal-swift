@@ -1,5 +1,4 @@
-# gdal-static-swift
-[![Build Status](https://travis-ci.com/cropio/gdal-static-swift.svg?token=2x1gjKbRpPVj3abdDxFe&branch=master)](https://travis-ci.com/cropio/gdal-static-swift) [![codecov](https://codecov.io/gh/cropio/gdal-static-swift/branch/master/graph/badge.svg?token=79emLU9lm3)](https://codecov.io/gh/cropio/gdal-static-swift) [![Maintainability](https://api.codeclimate.com/v1/badges/14c3a11bb64cf09f9317/maintainability)](https://codeclimate.com/repos/5ea6c2f7644a6501a300d6bc/maintainability)
+# gdal-swift
 
 This is GDAL static library builded for ios platform, with swift binding
 
@@ -9,12 +8,12 @@ For installation GDAL you can use **Swift Package Manager** or **Cocoapods**
 #### Swift Package Manager
 Use Xcode menu **File -> Add Package Dependencies...** and add this repository url in search field.
 ```url
-https://github.com/cropio/gdal-static-swift.git
+https://github.com/syngenta/gdal-swift.git
 ```
 
 #### Cocoapods
 ```ruby
-pod 'gdal-swift-static', :git => 'https://github.com/cropio/gdal-static-swift.git'
+pod 'gdal-static', :git => 'https://github.com/syngenta/gdal-swift.git'
 ```
 
 ### TileProvider
@@ -55,11 +54,11 @@ cd gdal-buld
 
 After success compilation you will find **gdal.xcframework.zip** file in **gdal-buld** folder.
 
-Then you should upload this file to [**Releases**](https://github.com/cropio/gdal-static-swift/releases) section in this repository.
+Then you should upload this file to [**Releases**](https://github.com/syngenta/gdal-swift/releases) section in this repository.
 
 Upload file **url** example:
-```
-https://github.com/cropio/gdal-static-swift/releases/download/1.0.0/gdal.xcframework.zip
+```url
+https://github.com/syngenta/gdal-swift/releases/download/1.0.0/gdal.xcframework.zip
 ```
 
 After uploading you need to change **url** in two files  **Package.swift** and **prepare_gdal.sh**

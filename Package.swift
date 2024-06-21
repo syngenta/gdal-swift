@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-    name: "gdal-static-swift",
+    name: "gdal-swift",
     platforms: [
         .iOS(.v13),
     ],
     products: [
         .library(
-            name: "gdal-static-swift",
-            targets: ["gdal-static-swift"]
+            name: "gdal-swift",
+            targets: ["gdal-swift"]
         ),
     ],
     targets: [
@@ -22,7 +22,7 @@ let package = Package(
             checksum: "d786dcb6b38927859d98008a8ad51be5aace98d77335befee88bfd7697ca3b81"
         ),
         .target(
-            name: "gdal-static-swift",
+            name: "gdal-swift",
             dependencies: ["gdal"],
             path: "Sources",
             exclude: ["gdal"],
@@ -37,7 +37,7 @@ let package = Package(
         ),
         .testTarget(
             name: "UnitTests",
-            dependencies: ["gdal-static-swift"],
+            dependencies: ["gdal-swift"],
             path: "Tests/Tests",
             resources: [.process("Files")],
             cxxSettings: [.define("VALID_ARCHS", to: "arm64")]

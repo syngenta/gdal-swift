@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import gdal_static_swift
+import gdal_swift
 
 class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
