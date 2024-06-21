@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "gdal",
-            url: "https://github.com/Lumyk/gdal/releases/download/1.0/gdal.xcframework.zip",
+            url: "https://github.com/syngenta/gdal-swift/releases/download/1.0.0/gdal.xcframework.zip",
             checksum: "d786dcb6b38927859d98008a8ad51be5aace98d77335befee88bfd7697ca3b81"
         ),
         .target(
