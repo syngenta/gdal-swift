@@ -1,0 +1,7 @@
+module gdal {
+    header "gdal.h"
+    header "proj.h"
+    header "gdalwarper.h"
+    header "cpl_conv.h"
+    export *
+}
