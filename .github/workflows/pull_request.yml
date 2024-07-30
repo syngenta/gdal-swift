@@ -27,4 +27,4 @@ jobs:
       - name: Run tests
         run: |
             cd Tests
-            set -o pipefail && xcodebuild test -scheme Tests CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,OS=17.5,name=iPhone 15 Pro' | xcpretty
+            set -o pipefail && xcodebuild test -scheme Tests CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -destination 'platform=iOS Simulator,OS=17.5,name=iPhone 15 Pro,arch=arm64' | xcpretty
