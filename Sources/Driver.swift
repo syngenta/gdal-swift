@@ -18,6 +18,11 @@ public class Driver {
     public static func registerAll() {
         GDALAllRegister()
         CPLSetConfigOption("GTIFF_SRS_SOURCE", "EPSG")
+
+        if let projDbPath = Bundle.module.path(forResource: "proj", ofType: "db") {
+            let projLibPath = (projDbPath as NSString).deletingLastPathComponent
+            setenv("PROJ_LIB", projLibPath, 1)
+        }
     }
 
     public static func deregisterAll() {

@@ -26,6 +26,7 @@ let package = Package(
             dependencies: ["gdal"],
             path: "Sources",
             exclude: ["gdal"],
+            resources: [.copy("proj.db")],
             cSettings: [.define("VALID_ARCHS", to: "arm64")],
             cxxSettings: [.define("VALID_ARCHS", to: "arm64")],
             linkerSettings: [

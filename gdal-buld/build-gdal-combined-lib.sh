@@ -46,6 +46,10 @@ xcodebuild -create-xcframework \
 		-headers ${SIMULATOR_UNIVERSAL}/include \
     -output gdal.xcframework
 
+# Copy proj.db to Sources for SPM resource bundling
+cp ${PREFIX}/arm64/iphoneos${SDK_VERSION}.sdk/share/proj/proj.db ../Sources/proj.db
+echo "Updated Sources/proj.db"
+
 # Ziping GDAL for split
 zip -r gdal.xcframework.zip gdal.xcframework
 
