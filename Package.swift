@@ -16,10 +16,10 @@ let package = Package(
         .binaryTarget(
             name: "gdal",
             // This URL should be updated after GDAL recompile
-            url: "https://github.com/syngenta/gdal-swift/releases/download/gdal-builds/gdal_1.0.1.xcframework.zip",
+            url: "https://github.com/syngenta/gdal-swift/releases/download/gdal-builds/gdal_1.0.2.xcframework.zip",
             // After changing the URL, you should also update the 'checksum'.
             // Run 'swift package compute-checksum gdal.xcframework.zip' command to get the 'checksum'.
-            checksum: "0a6ba4992ec20ede9870e8d02cfad2d4ffc0d88d343c24ba82c0fc1b0060bbc3"
+            checksum: "ca844e5e339e65d84b05f21cf37ae14d451d9c8e9aa4cdb148154cbd88787d72"
         ),
         .target(
             name: "gdal-swift",
