@@ -3,5 +3,7 @@ module gdal {
     header "proj.h"
     header "gdalwarper.h"
     header "cpl_conv.h"
+    header "ogr_api.h"
+    header "ogr_srs_api.h"
     export *
 }

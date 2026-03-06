@@ -75,11 +75,24 @@ then
       else
         host="arm-apple-darwin"
       fi
+elif [ $arch = "x86_64" ]
+then
+    # For x86_64 on Apple Silicon: skip --host so autoconf runs tests natively (arm64).
+    # The -arch x86_64 in CFLAGS ensures the output is x86_64 code.
+    host=""
 else
     host="${arch}-apple-darwin"
 fi
 
 echo "building for host ${host}"
+
+# Build --host flag only if host is set (empty for x86_64 cross-compile on Apple Silicon)
+if [ -n "$host" ]; then
+    host_flag="--host=$host"
+else
+    host_flag="--host=x86_64-apple-darwin"
+fi
+cache_flag=""
 
 platform_dir=`xcrun -find -sdk ${platform} --show-sdk-platform-path`
 platform_sdk_dir=`xcrun -find -sdk ${platform} --show-sdk-path`
@@ -90,8 +103,16 @@ echo library will be exported to $prefix
 
 #setup compiler flags
  # export CC=`xcrun -find -sdk iphoneos gcc`
-export CFLAGS="-I/opt/local/include -fembed-bitcode -Wno-error=implicit-function-declaration -arch ${arch} -pipe -Os -gdwarf-2 -isysroot ${platform_sdk_dir} ${extra_cflags}"
-export LDFLAGS="-arch ${arch} -isysroot ${platform_sdk_dir}"
+
+# For x86_64 simulator: explicit target triple is required so the linker knows the platform
+if [ "$arch" = "x86_64" ] && [ "$platform" = "iphonesimulator" ]; then
+    target_flag="-target x86_64-apple-ios${IPHONEOS_DEPLOYMENT_TARGET}-simulator"
+else
+    target_flag=""
+fi
+
+export CFLAGS="-I/opt/local/include -fembed-bitcode -Wno-error=implicit-function-declaration -arch ${arch} -pipe -Os -gdwarf-2 -isysroot ${platform_sdk_dir} ${target_flag} ${extra_cflags}"
+export LDFLAGS="-arch ${arch} -isysroot ${platform_sdk_dir} ${target_flag}"
  # export CXX=`xcrun -find -sdk iphoneos g++`
 export CXXFLAGS="${CFLAGS}"
  # export CPP=`xcrun -find -sdk iphoneos cpp`
@@ -133,7 +154,8 @@ echo "configure proj"
     --prefix=${proj_prefix} \
     --enable-shared=no \
     --enable-static=yes \
-    --host=$host \
+    $host_flag \
+    $cache_flag \
     --disable-dependency-tracking \
     "$@" || exit
 
@@ -175,7 +197,8 @@ echo
 echo "configure gdal"
 ./configure \
 --prefix="${prefix}" \
---host=$host \
+$host_flag \
+$cache_flag \
 --disable-shared \
 --enable-static \
 --with-hide-internal-symbols=yes \
