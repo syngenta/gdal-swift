@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.description      = "This is GDAL static library builded for ios platform, with swift binding"
 
   s.homepage         = 'https://github.com/syngenta/gdal-swift'
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Yevhenii Kalashnikov' => 'lumyk@me.com' }
   s.source           = { :git => 'https://github.com/syngenta/gdal-swift.git', :tag => s.version.to_s }
 
