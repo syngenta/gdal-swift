@@ -73,3 +73,9 @@ swift package compute-checksum gdal.xcframework.zip
 
 #### **prepare_gdal.sh**
 File located in **Sources/gdal/** folder. You need to change **url** in this file.
+
+### License
+`gdal-swift` is released under the [MIT License](LICENSE).
+
+It distributes binaries and data from GDAL and PROJ. Their licenses are
+reproduced in [THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md).
